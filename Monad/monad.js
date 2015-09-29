@@ -8,8 +8,8 @@ Monad.prototype.unit = function (value) {
 }
 Monad.prototype.bind = function (func) {
 	var value = func(this.value);
-	this.value = value;
-	return this;
+	var monad = new Monad(value);
+	return monad;
 }
 Monad.prototype.extract = function () {
 	return this.value;
@@ -33,13 +33,13 @@ var result = monad.extract();//60
 var monad = new Monad;
 monad.unit(10);
 
-console.log(monad.extract());
+console.log(monad.extract());//10
 
 var firstMonad = monad.bind(function (value) {
 	return value / 2;
 });
 
-console.log(firstMonad.extract());
+console.log(firstMonad.extract());//5
 
 var secondMonad = monad.bind(function (value) {
 	return value + 1;
@@ -49,4 +49,5 @@ var secondMonad = monad.bind(function (value) {
 	return value + 3;
 });
 
-console.log(secondMonad.extract());
+console.log(monad.extract())//10
+console.log(secondMonad.extract());//16
