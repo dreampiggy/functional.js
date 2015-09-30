@@ -22,12 +22,12 @@ var monad = new Monad(10);
 monad.unit(20);
 monad.unit(new Monad(30));
 
-monad.bind(function (value){return value});
-monad.bind(function (value) {
+monad.bind(function (value) { return value });
+var result = monad.bind(function (value) {
 	return value.extract() * 2;
 })
 
-var result = monad.extract();//60
+console.log(result.extract());//60
 
 //Test
 var monad = new Monad;
