@@ -30,7 +30,7 @@ readFile('/etc/hosts', {encoding:'utf-8' ,flag:'r'}).then(function (contents) {
 > What is monad? [Wikipedia](https://en.wikipedia.org/wiki/Monad) [中文说明](http://www.ruanyifeng.com/blog/2015/07/monad.html)
 
 ```javascript
-var Monad = require('./monad);
+var Monad = require('./monad');
 //Use
 var monad = new Monad;
 var monad = new Monad(10);
