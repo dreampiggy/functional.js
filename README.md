@@ -1,6 +1,6 @@
 # Functional-OO
 
-> At now just take JavaScript to show
+> Currently are all use JavaScript to explain
 
 ## Why Functional?
 
@@ -10,9 +10,42 @@
 
 **3. For fun, isn't it?**
 
-## Promisify
+## Async
+
+> What is async [Wikipedia](hhttps://en.wikipedia.org/wiki/Asynchronous_I/O) [About future and promise](https://en.wikipedia.org/wiki/Futures_and_promises) 
+
++ Async foreach call
+
+```javascript
+var ForEach = require('./foreach');
+var fs = require('fs');
+var arr = [1, 2, 3];
+var eachFunc = function (currentValue, index, array) {
+	var done = this.async();
+	fs.readFile('/etc/hosts', {encoding:'utf-8'}, function (err,result) {
+		if (result) {
+			console.log(currentValue,index,array);
+			done(true); //true to set async have done. false to early abort;
+		}
+	})
+}
+
+ForEach(arr, eachFunc, function () {
+	console.log('all ok');
+})
+```
+
+## Promise
 
 > What is promise? [Standard](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise) [中文说明](http://liubin.github.io/promises-book/)
+
++ Promise
+
+> Just use Node.js built-in Promise(from `0.12`), or use [Promise](https://www.npmjs.com/package/promise) for **ancient** version Node.js
+
++ Promisify
+
+> Convert callback function to promise object
 
 ```javascript
 var promisify = require('./promisify');
@@ -48,7 +81,7 @@ console.log(result.extract());//60
 
 ## Optional
 
-> What is optional? [Wikipedia](https://en.wikipedia.org/wiki/Option_type) [类比说明](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID452)
+> What is optional? [Wikipedia](https://en.wikipedia.org/wiki/Option_type) [Optional in Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID452)
 
 ```javascript
 var Optional = require('./optional');
