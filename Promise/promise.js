@@ -1,9 +1,9 @@
 function asyncFunction() {
-	if (1 === 1){
-		return Promise.resolve("OK");
+	if (1 == 1){
+		return Promise.resolve("OK1");
 	}
 	else{
-		return Promise.reject(new Error("Wrong"));
+		return Promise.reject(new Error("Wrong1"));
 	}
 }
 /*
@@ -21,13 +21,15 @@ function asyncFunction() {
 }
 */
 function anotherAsyncFunction(){
-	if (2 != 2){
-		return Promise.resolve("OK");
+	if (2 == 2){
+		return Promise.resolve("OK2");
 	}
 	else{
-		return Promise.reject(new Error("Wrong"));
+		return Promise.reject(new Error("Wrong2"));
 	}
 }
+
+
 
 //Use a Promise array.call then() when all Promise is resolve->then() or reject->catch()
 Promise.all([asyncFunction(),anotherAsyncFunction()]).then(function(val){

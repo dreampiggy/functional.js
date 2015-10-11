@@ -3,9 +3,6 @@ Optional = function () {
 	this.value = arguments[0];
 }
 Optional.prototype.get = function () {
-	if (isNull(this.value)){
-		throw new Error("Optional is null");
-	}
 	return this.value;
 }
 Optional.prototype.empty = function () {
