@@ -130,6 +130,27 @@ console.log(double(3));//6
 console.log(square(4));//16
 ```
 
+## Combinator
+
+> What is Y-combinator? [Wikipedia](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus) [知乎来源](http://www.zhihu.com/question/21099081#answer-2707220)
+
++ Y-combinator
+
+```javascript
+/*
+We can build a `pure` lambda(anonymous function) with Y-combinator.
+See `y-test.js` and learn from step by step what `Y-combinator` is
+*/
+
+var Y = require("./y")
+var fibonacci = Y(function(f) {
+	return function(n) {
+		return n == 0 ? 1 : n * f(n - 1);
+	}
+})
+console.log(fibonacci(5))
+```
+
 ## Lazy(Unfinished)
 
 > What is lazy? [Wikipedia](https://en.wikipedia.org/wiki/Lazy_evaluation) [中文说明](http://segmentfault.com/a/1190000000358463)
