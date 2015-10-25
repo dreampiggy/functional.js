@@ -19,19 +19,25 @@
 ```javascript
 var ForEach = require('./foreach');
 var fs = require('fs');
-var arr = [1, 2, 3];
+var arr = ['/etc/hosts', '/etc/paths', '/etc/donthavethisfile'];
+
 var eachFunc = function (currentValue, index, array) {
 	var done = this.async();
-	fs.readFile('/etc/hosts', {encoding:'utf-8'}, function (err,result) {
-		if (result) {
-			console.log(currentValue,index,array);
-			done(true); //true to set async have done. false to early abort;
+	fs.readFile(currentValue, {encoding:'utf-8'}, function (err,result) {
+		if (err) {
+			console.error('file: ' + currentValue + ' not found');
+			done(false); //false to early abort;
 		}
+		else {
+			console.log('file: ' + currentValue + ' load');
+			console.log(result);
+			done(true); //true to set async have done.
+		};
 	})
 }
 
 ForEach(arr, eachFunc, function () {
-	console.log('all ok');
+	console.log('foreach end');
 })
 ```
 
@@ -119,13 +125,13 @@ var multiply = function (a, b) {
 	return a * b;
 }
 var double = curry(multiply, function (args) {
-	args.push(2);
+	args.push(2);	//which means multiply(2, x)
 	return args;
 });
 
 //Use by function prototype
 var square = multiply.curry(function (args) {
-	args.push(args[0]);
+	args.push(args[0]);	//which means multiply(x, x)
 	return args;
 })
 console.log(multiply(3, 4));//12
@@ -137,7 +143,7 @@ console.log(square(4));//16
 
 > What is Y-combinator? [Wikipedia](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus) [知乎来源](http://www.zhihu.com/question/21099081#answer-2707220)
 > 
-> Attention: for strict languages(which means function call by value) such as `JavaScript`, using original `Y-combinator` will cause stack overflow because calling `f(x(x))` will recursively call to generate `accuracy` defination. So we use Z-combinator to actually implement `Y-combinator`. For more, see: [Z-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Strict_fixed_point_combinator)
+> Attention: for strict languages(which means function call by value) such as `JavaScript`, using original `Y-combinator` will cause stack overflow because calling `f(x(x))` means the compiler(interpreter) will try to generate `accuracy` defination with infinity stack alloc. So we use `Z-combinator` to actually implement `Y-combinator`. For more, see: [Z-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Strict_fixed_point_combinator)
 
 + Y-combinator
 
