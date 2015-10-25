@@ -113,14 +113,17 @@ console.log(result.get());//4
 > What is curry? [Wikipedia](https://en.wikipedia.org/wiki/Currying) [中文说明](https://gist.github.com/jcouyang/b56a830cd55bd230049f)
 
 ```javascript
-//Use
+var curry = require('./curry');
+//Use by invoking
 var multiply = function (a, b) {
 	return a * b;
 }
-var double = multiply.curry(function (args) {
+var double = curry(multiply, function (args) {
 	args.push(2);
 	return args;
 });
+
+//Use by function prototype
 var square = multiply.curry(function (args) {
 	args.push(args[0]);
 	return args;
@@ -133,6 +136,8 @@ console.log(square(4));//16
 ## Combinator
 
 > What is Y-combinator? [Wikipedia](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus) [知乎来源](http://www.zhihu.com/question/21099081#answer-2707220)
+> 
+> Attention: for strict languages(which means function call by value) such as `JavaScript`, using original `Y-combinator` will cause stack overflow because calling `f(x(x))` will recursively call to generate `accuracy` defination. So we use Z-combinator to actually implement `Y-combinator`. For more, see: [Z-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Strict_fixed_point_combinator)
 
 + Y-combinator
 

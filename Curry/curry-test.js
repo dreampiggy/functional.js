@@ -1,14 +1,16 @@
 var curry = require('./curry');
-//Use
+//Use by invoking
 var multiply = function (a, b) {
 	return a * b;
 }
 var double = curry(multiply, function (args) {
-	args.push(2);
+	args.push(2);	//which means multiply(2, x)
 	return args;
 });
-var square = curry(multiply, function (args) {
-	args.push(args[0]);
+
+//Use by function prototype
+var square = multiply.curry(function (args) {
+	args.push(args[0]);	//which means multiply(x, x)
 	return args;
 })
 console.log(multiply(3, 4));//12
