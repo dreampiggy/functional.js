@@ -1,6 +1,6 @@
 # Functional.js
 
-> At now we use JavaScript to explain
+> Functional syntax sugar and more, for JavaScript
 
 ## Why Functional?
 
@@ -9,6 +9,20 @@
 **2. Build a high-level logic!**
 
 **3. For fun, isn't it?**
+
+
+## Build
+
+Because [ECMAScript 6 Standard](http://www.ecma-international.org/ecma-262/6.0/) has released, so we all use this to build. But not all runtime support the standard.
+Thanks to [babel](https://babeljs.io/repl/) so we can try it now.
+
+You can install babel through npm and use `node-babel` instead of `node` to run example.
+
+```bash
+sudo npm install -g babel-cli
+```
+
+We recommend to use [Sublime Text](http://www.sublimetext.com/3) with [Babel](https://packagecontrol.io/packages/Babel) plugin. (Which support EC6 and JSX syntax better) and here is a build-system for Sublime in `Other/Babel.sublime-build`. One short-key `Command + Shift + B` to run.
 
 ## Async
 
@@ -182,22 +196,14 @@ var fully = new retroactive(true);
 var partialQueue = new partial.queue();
 
 function partialQueueTest(queue) {
-
 	queue.insert(queue.push(1), 0);
 	queue.insert(queue.push(2), 1);
-
 	queue.query();	//[1,2]
-
 	queue.insert(queue.pop(), 2);
-
 	queue.query();	//[2]
-
 	queue.delete(2);
-
 	queue.query();	//[1,2]
-
 	queue.delete(0);
-
 	queue.query();	//[2]
 }
 ```
