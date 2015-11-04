@@ -1,6 +1,6 @@
-# Functional-OO
+# Functional.js
 
-> Currently are all use JavaScript to explain
+> At now we use JavaScript to explain
 
 ## Why Functional?
 
@@ -160,6 +160,46 @@ var fibonacci = Y(function(f) {
 	}
 })
 console.log(fibonacci(5))
+```
+
+## Retroactive(Data Structure)
+
+> What is retroactive? [Wikipedia](https://en.wikipedia.org/wiki/Retroactive_data_structures) [Paper](http://delivery.acm.org/10.1145/1250000/1240236/a13-demaine.pdf?ip=223.3.93.86&id=1240236&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2EEEBE655830483280%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=558486549&CFTOKEN=73726269&__acm__=1446648373_12ed7d4fa794b6c9a384f96437e3588f) [Reference](http://python-retroactive-data-structures.readthedocs.org/en/latest/specifics/)
+> 
+> At now just implement `retoractive queue`
+
+```javascript
+var retroactive = require('./retroactive'),
+	assert = require('assert');
+
+//partial construct with false or null, fully with true
+
+var partial = new retroactive(false);
+var fully = new retroactive(true);
+
+//next use property to generate new object
+
+var partialQueue = new partial.queue();
+
+function partialQueueTest(queue) {
+
+	queue.insert(queue.push(1), 0);
+	queue.insert(queue.push(2), 1);
+
+	queue.query();	//[1,2]
+
+	queue.insert(queue.pop(), 2);
+
+	queue.query();	//[2]
+
+	queue.delete(2);
+
+	queue.query();	//[1,2]
+
+	queue.delete(0);
+
+	queue.query();	//[2]
+}
 ```
 
 ## Lazy(Unfinished)
