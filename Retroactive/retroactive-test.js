@@ -1,5 +1,4 @@
-var retroactive = require('./retroactive'),
-	assert = require('assert');
+var retroactive = require('./retroactive');
 
 //partial construct with false or null, fully with true
 

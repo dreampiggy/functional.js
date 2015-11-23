@@ -11,6 +11,14 @@
 **3. For fun, isn't it?**
 
 
+## Install
+
+> Of course. Publish it on `npm`
+
+```bash
+npm install functionaljs
+```
+
 ## Build
 
 Because [ECMAScript 6 Standard](http://www.ecma-international.org/ecma-262/6.0/) has released, so we all use this to build. But not all runtime support the standard.
@@ -31,7 +39,7 @@ We recommend to use [Sublime Text](http://www.sublimetext.com/3) with [Babel](ht
 + Async foreach call
 
 ```javascript
-var ForEach = require('./foreach');
+var ForEach = require('functionaljs').ForEach;
 var fs = require('fs');
 var arr = ['/etc/hosts', '/etc/paths', '/etc/donthavethisfile'];
 
@@ -68,7 +76,7 @@ ForEach(arr, eachFunc, function () {
 > Convert callback function to promise object
 
 ```javascript
-var promisify = require('./promisify');
+var promisify = require('functionaljs').Promisify;
 var fs = require('fs');
 var readFile = promisify(fs.readFile);
 readFile('/etc/hosts', {encoding:'utf-8' ,flag:'r'}).then(function (contents) {
@@ -83,7 +91,7 @@ readFile('/etc/hosts', {encoding:'utf-8' ,flag:'r'}).then(function (contents) {
 > What is monad? [Wikipedia](https://en.wikipedia.org/wiki/Monad) [中文说明](http://www.ruanyifeng.com/blog/2015/07/monad.html)
 
 ```javascript
-var Monad = require('./monad');
+var Monad = require('functionaljs').Monad;
 //Use
 var monad = new Monad;
 var monad = new Monad(10);
@@ -104,7 +112,7 @@ console.log(result.extract());//60
 > What is optional? [Wikipedia](https://en.wikipedia.org/wiki/Option_type) [Optional in Swift](https://developer.apple.com/library/ios/documentation/Swift/Conceptual/Swift_Programming_Language/Types.html#//apple_ref/doc/uid/TP40014097-CH31-ID452)
 
 ```javascript
-var Optional = require('./optional');
+var Optional = require('functionaljs').Optional;
 //Use
 var op = new Optional(1);
 
@@ -133,7 +141,7 @@ console.log(result.get());//4
 > What is curry? [Wikipedia](https://en.wikipedia.org/wiki/Currying) [中文说明](https://gist.github.com/jcouyang/b56a830cd55bd230049f)
 
 ```javascript
-var curry = require('./curry');
+var curry = require('functionaljs').Curry;
 //Use by invoking
 var multiply = function (a, b) {
 	return a * b;
@@ -167,7 +175,7 @@ We can build a `pure` lambda(anonymous function) with Y-combinator.
 See `y-test.js` and learn from step by step what `Y-combinator` is
 */
 
-var Y = require("./y")
+var Y = require('functionaljs').Y;
 var fibonacci = Y(function(f) {
 	return function(n) {
 		return n == 0 ? 1 : n * f(n - 1);
@@ -183,7 +191,7 @@ console.log(fibonacci(5))
 > Thanks to [@pkrumins](https://github.com/pkrumins)
 
 ```javascript
-var Lazy = require('./lazy');
+var Lazy = require('functionaljs').Lazy;
 
 //Lazy range
 Lazy.range(10).filter(function (e) {
@@ -206,8 +214,7 @@ Lazy.range(10).filter(function (e) {
 > At now just implement `retoractive queue`
 
 ```javascript
-var retroactive = require('./retroactive'),
-	assert = require('assert');
+var retroactive = require('functionaljs').Retroactive;
 
 //partial construct with false or null, fully with true
 

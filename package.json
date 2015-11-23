@@ -1,0 +1,22 @@
+{
+  "name": "functionaljs",
+  "version": "0.1.0",
+  "description": "functional syntax sugar, for javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "cd test && node test.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lizhuoli1126/functional.js.git"
+  },
+  "keywords": [
+    "functional"
+  ],
+  "author": "dreampiggy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lizhuoli1126/functional.js/issues"
+  },
+  "homepage": "https://github.com/lizhuoli1126/functional.js#readme"
+}
