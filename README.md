@@ -1,5 +1,9 @@
 # Functional.js
 
+[![npm](https://img.shields.io/npm/v/functionaljs.svg)](https://www.npmjs.com/package/functionaljs)
+[![License](https://img.shields.io/dub/l/vibe-d.svg)](https://opensource.org/licenses/MIT)
+[![Star](https://img.shields.io/github/stars/lizhuoli1126/functional.js.svg?style=social&label=Star)](https://github.com/lizhuoli1126/functional.js)
+
 > Functional syntax sugar and more, for JavaScript
 
 ![logo](https://cloud.githubusercontent.com/assets/6919743/11389589/21b1bd72-937d-11e5-84ae-657dddf74aa6.png)
@@ -14,8 +18,7 @@
 
 
 ## Install
-
-> Of course. Publish it on `npm` with one line
+> Of course. Install by [npm](https://www.npmjs.com/package/functionaljs) with one line
 
 ```bash
 npm install functionaljs
@@ -34,6 +37,7 @@ sudo npm install -g babel-cli
 ```
 
 We recommend to use [Sublime Text](http://www.sublimetext.com/3) with [Babel](https://packagecontrol.io/packages/Babel) plugin. (Which support EC6 and JSX syntax better) and here is a build-system for Sublime in `Other/Babel.sublime-build`. One short-key `Command + Shift + B` to run.
+
 
 ## Async
 
@@ -142,6 +146,8 @@ console.log(result.get());//4
 ## Curry
 
 > What is curry? [Wikipedia](https://en.wikipedia.org/wiki/Currying) [中文说明](https://gist.github.com/jcouyang/b56a830cd55bd230049f)
+> 
+> Attention. Use `Function.curry` call may be conflict with your custom function `curry` prototype(if you do so). Please set it to `undefined` if you don't want
 
 ```javascript
 var curry = require('functionaljs').Curry;
@@ -240,3 +246,5 @@ function partialQueueTest(queue) {
 	queue.query();	//[2]
 }
 ```
+
+## License MIT
