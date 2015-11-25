@@ -1,3 +1,4 @@
+'use strict';
 var Queue = require('./lib/queue'),
 	Stack = require('./lib/stack');
 

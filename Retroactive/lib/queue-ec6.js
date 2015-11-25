@@ -1,3 +1,4 @@
+'use strict';
 var BST = require('./data_structures/bst');
 var DoublyLinkedList = require('./data_structures/double_linked_list');
 

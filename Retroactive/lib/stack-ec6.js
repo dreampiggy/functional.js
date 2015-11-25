@@ -1,3 +1,4 @@
+'use strict';
 var BST = require('./data_structures/bst');
 var bst = new BST(function(a, b) {
   if (a.time === b.time) return 0;

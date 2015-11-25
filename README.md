@@ -2,6 +2,8 @@
 
 > Functional syntax sugar and more, for JavaScript
 
+![logo](https://cloud.githubusercontent.com/assets/6919743/11389589/21b1bd72-937d-11e5-84ae-657dddf74aa6.png)
+
 ## Why Functional?
 
 **1 .Spead up your develop!**
@@ -13,7 +15,7 @@
 
 ## Install
 
-> Of course. Publish it on `npm`
+> Of course. Publish it on `npm` with one line
 
 ```bash
 npm install functionaljs
@@ -22,9 +24,10 @@ npm install functionaljs
 ## Build
 
 Because [ECMAScript 6 Standard](http://www.ecma-international.org/ecma-262/6.0/) has released, so we all use this to build. But not all runtime support the standard.
-Thanks to [babel](https://babeljs.io/repl/) so we can try it now.
 
-You can install babel through npm and use `node-babel` instead of `node` to run example.
+So, if you use Node.js `v5.0.0` or higher, you can use pure `*-ec6.js` to run. Otherwise use the compiled js(`without -ec6`) by [Babel](https://babeljs.io/repl/)
+
+You can install `Babel` through `npm` and use `node-babel` instead of `node` to run example.
 
 ```bash
 sudo npm install -g babel-cli
