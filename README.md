@@ -1,6 +1,7 @@
 # Functional.js
 
 [![npm](https://img.shields.io/npm/v/functionaljs.svg)](https://www.npmjs.com/package/functionaljs)
+[![travis](https://img.shields.io/travis/lizhuoli1126/functional.js.svg)](https://travis-ci.org/lizhuoli1126/functional.js)
 [![License](https://img.shields.io/dub/l/vibe-d.svg)](https://opensource.org/licenses/MIT)
 [![Star](https://img.shields.io/github/stars/lizhuoli1126/functional.js.svg?style=social&label=Star)](https://github.com/lizhuoli1126/functional.js)
 
