@@ -11,7 +11,7 @@
 
 ## Why Functional?
 
-**1 .Spead up your develop!**
+**1 .Speed up your develop!**
 
 **2. Build a high-level logic!**
 
@@ -42,7 +42,7 @@ We recommend to use [Sublime Text](http://www.sublimetext.com/3) with [Babel](ht
 
 ## Async
 
-> What is async [Wikipedia](hhttps://en.wikipedia.org/wiki/Asynchronous_I/O) [About future and promise](https://en.wikipedia.org/wiki/Futures_and_promises) 
+> What is async [Wikipedia](hhttps://en.wikipedia.org/wiki/Asynchronous_I/O) [About future and promise](https://en.wikipedia.org/wiki/Futures_and_promises)
 
 + Async foreach call
 
@@ -147,7 +147,7 @@ console.log(result.get());//4
 ## Curry
 
 > What is curry? [Wikipedia](https://en.wikipedia.org/wiki/Currying) [中文说明](https://gist.github.com/jcouyang/b56a830cd55bd230049f)
-> 
+>
 > Attention. Use `Function.curry` call may be conflict with your custom function `curry` prototype(if you do so). Please set it to `undefined` if you don't want
 
 ```javascript
@@ -174,7 +174,7 @@ console.log(square(4));//16
 ## Combinator
 
 > What is Y-combinator? [Wikipedia](https://en.wikipedia.org/wiki/Fixed-point_combinator#Fixed_point_combinators_in_lambda_calculus) [知乎来源](http://www.zhihu.com/question/21099081#answer-2707220)
-> 
+>
 > Attention: for strict languages(which means function call by value) such as `JavaScript`, using original `Y-combinator` will cause stack overflow because calling `f(x(x))` means the compiler(interpreter) will try to generate `accuracy` defination with infinity stack alloc. So we use `Z-combinator` to actually implement `Y-combinator`. For more, see: [Z-combinator](https://en.wikipedia.org/wiki/Fixed-point_combinator#Strict_fixed_point_combinator)
 
 + Y-combinator
@@ -197,7 +197,7 @@ console.log(fibonacci(5))
 ## Lazy
 
 > What is lazy? [Wikipedia](https://en.wikipedia.org/wiki/Lazy_evaluation) [中文说明](http://segmentfault.com/a/1190000000358463)
-> 
+>
 > Thanks to [@pkrumins](https://github.com/pkrumins)
 
 ```javascript
@@ -220,7 +220,7 @@ Lazy.range(10).filter(function (e) {
 ## Retroactive(Data Structure)
 
 > What is retroactive? [Wikipedia](https://en.wikipedia.org/wiki/Retroactive_data_structures) [Paper](http://delivery.acm.org/10.1145/1250000/1240236/a13-demaine.pdf?ip=223.3.93.86&id=1240236&acc=ACTIVE%20SERVICE&key=BF85BBA5741FDC6E%2EEEBE655830483280%2E4D4702B0C3E38B35%2E4D4702B0C3E38B35&CFID=558486549&CFTOKEN=73726269&__acm__=1446648373_12ed7d4fa794b6c9a384f96437e3588f) [Reference](http://python-retroactive-data-structures.readthedocs.org/en/latest/specifics/)
-> 
+>
 > At now just implement `retoractive queue`
 
 ```javascript
